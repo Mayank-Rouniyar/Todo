@@ -21,13 +21,16 @@ function App() {
       prevTodo.id === id ? { ...prevTodo, 
         completed: !prevTodo.completed } : prevTodo))
   }
-  useEffect(()=>{
-  const todos=JSON.parse(localStorage.getItem("todos"))
-  if(todos&&todos.length>0)
-  {
-   setTodos(todos)
+  useEffect(() => {
+  const todos = JSON.parse(localStorage.getItem("todos"));
+  if (Array.isArray(todos) && todos.length > 0) {
+    setTodos(todos);
   }
-  },[])
+}, []);
+
+
+
+  
   useEffect(()=>{
   localStorage.setItem("todos",JSON.stringify(todos))
   },[todos])
