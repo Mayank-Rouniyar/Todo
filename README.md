@@ -23,5 +23,3 @@ This project has a very interactive User Interface
 
 ---
 
-## 📁 Folder Structure
-
